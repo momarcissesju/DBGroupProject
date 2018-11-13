@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: 1s all;
+    -moz-transition: 1s all;
+    -webkit-transition: 1s all;
+}
+
+#error_message {
+    color: #ff4d4d;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+}
+
+#logo {
+    width: 50%;
+    margin: 5px 25%;
+    text-align: center;
+}
+
+form {
+    width: 50%;
+    margin: 15px 25%;
+    text-align: center;
+    background: #f2f2f2;
+    padding: 15px;
+}
+
+form h1 {
+    color: cornflowerblue;
+    font-size: 24px;
+    margin: 12.5px auto;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+form h2 {
+    color: cornflowerblue;
+    font-size: 18px;
+    margin: 12.5px auto 0px auto;
+}
+
+form input[type="text"] {
+    display: block;
+    margin: 5px auto;
+    padding: 5px;
+    width: 90%;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+form input[type="password"] {
+    display: block;
+    margin: 5px auto;
+    padding: 5px;
+    width: 90%;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+form select {
+    width: 40%;
+    margin: 5px 30%;
+    padding: 5px;
+}
+
+form button {
+    display: block;
+    width: 40%;
+    margin: 2.5px 30%;
+    padding: 5px;
+    border: none;
+    font-size: 18px;
+    background: cornflowerblue;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #004d99;
+}

@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: 1s all;
+    -moz-transition: 1s all;
+    -webkit-transition: 1s all;
+}
+
+#logo {
+    width: 50%;
+    margin: 5px 25%;
+    text-align: center;
+}
+
+form {
+    width: 50%;
+    margin: 30px 25%;
+    text-align: center;
+    background: #f2f2f2;
+    padding: 15px;
+}
+
+form h1 {
+    color: cornflowerblue;
+    font-size: 24px;
+    margin: 25px auto;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+form h2 {
+    color: cornflowerblue;
+    font-size: 18px;
+    margin: 25px auto 0px auto;
+}
+
+form input[type="text"] {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    width: 90%;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+form input[type="text"]:focus {
+    border-color: #004d99;
+}
+
+form input[type="password"] {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    width: 90%;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+form input[type="password"]:focus {
+    border-color: #004d99;
+}
+
+form select {
+    width: 40%;
+    margin: 10px 30%;
+    padding: 5px;
+}
+
+form button {
+    display: block;
+    width: 40%;
+    margin: 5px 30%;
+    padding: 5px;
+    border: none;
+    font-size: 18px;
+    background: cornflowerblue;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #004d99;
+}
