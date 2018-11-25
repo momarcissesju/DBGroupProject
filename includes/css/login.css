@@ -6,6 +6,13 @@
     -webkit-transition: 1s all;
 }
 
+#error_message {
+    color: #ff4d4d;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+}
+
 #logo {
     width: 50%;
     margin: 5px 25%;

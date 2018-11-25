@@ -17,38 +17,77 @@
 
                 $('#createAccount').click(function(e) {
                     e.preventDefault();
+                    $(this).html('<i class="fas fa-circle-notch fa-spin"></i>');
                     var firstName = $('input[name="firstName"]').val();
                     var lastName = $('input[name="lastName"]').val();
                     var username = $('input[name="username"]').val();
                     var address = $('input[name="address"]').val();
                     var email = $('input[name="email"]').val();
-                    var emailConfirmation = $('input[name="emailConfirmation"]').val();
                     var password = $('input[name="password"]').val();
-                    var passwordConfirmation = $('input[name="passwordConfirmation"]').val();
-                    var type = $('input[name="type"]').val();
+                    var type = $('#type').val();
 
-                    if(isEmpty(firstName) && isBlank(firstName)) { //checl if user entered first name
+                    if(isEmpty(firstName) && isBlank(firstName)) { //check if user entered first name
                         $('input[name="firstName"]').css('border-color', '#ff4d4d');
                         $('#error_message').html('Fill all fields.');
-                    } else if(isempty(lastName) && isBlank(lastName)) { //checl if user entered last name
-                        
-                    } else if(empty(username)) { //checl if user entered username
-
-                    } else if(empty(address)) { //checl if user entered address
-
-                    } else if(empty(email)) { //checl if user entered email
-
-                    } else if(empty(emailConfirmation)) { //check if user confirmed email
-
-                    } else if(empty(password)) { //check if user entered password
-                        
-                    } else if(empty(passwordConfirmation)) {  //check if user confirmed password
-
-                    } else if(type == null) { //check if user picked a type
-
+                        $(this).html('SIGN UP');
+                    } else if(isEmpty(lastName) && isBlank(lastName)) { //check if user entered last name
+                        $('input[name="lastName"]').css('border-color', '#ff4d4d');
+                        $('#error_message').html('Fill all fields.');
+                        $(this).html('SIGN UP');
+                    } else if(isEmpty(username) && isBlank(username)) { //check if user entered username
+                        $('input[name="username"]').css('border-color', '#ff4d4d');
+                        $('#error_message').html('Fill all fields.');
+                        $(this).html('SIGN UP');
+                    } else if(isEmpty(address) && isBlank(address)) { //check if user entered address
+                        $('input[name="address"]').css('border-color', '#ff4d4d');
+                        $('#error_message').html('Fill all fields.');
+                        $(this).html('SIGN UP');
+                    } else if(isEmpty(email) && isBlank(email)) { //check if user entered email
+                        $('input[name="email"]').css('border-color', '#ff4d4d');
+                        $('#error_message').html('Fill all fields.');
+                        $(this).html('SIGN UP');
+                    } else if(isEmpty(password) && isBlank(password)) { //check if user entered password
+                        $('input[name="password"]').css('border-color', '#ff4d4d');
+                        $('#error_message').html('Fill all fields.');
+                        $(this).html('SIGN UP');
+                    } else if(type == 'null') { //check if user picked a type
+                        $('#error_message').html('Choose Type.');
+                        $(this).html('SIGN UP');
                     } else {
                         //AJAX Call to a php file to insert data inside DB if all the fields are filled
-                        $('#error_message').html();
+                        $('#error_message').html('');
+
+                        $.ajax({
+                            url: 'model/login_signup/signup.php',
+                            type: 'POST',
+                            data: {firstName: firstName, lastName: lastName, username: username, address: address, email: email, password: password, type: type},
+                            success: function(response) {
+                                console.log(response);
+                                if(response == 'DB Error') {
+                                    $('#createAccount').html('Error. Try Later.');
+                                    setTimeout(() => {
+                                        $('#createAccount').html('SIGN UP');
+                                    }, 2000);
+                                } else if(response == 'Registered') {
+                                    $('#createAccount').html('Account Created');
+                                    setTimeout(() => {
+                                        window.location.href = 'login.php';
+                                    }, 2000);
+                                } else {
+                                    $('#createAccount').html('Error. Try Later.');
+                                    setTimeout(() => {
+                                        $('#createAccount').html('SIGN UP');
+                                    }, 1500);
+                                }
+                            },
+                            error: function(response) {
+                                $('#createAccount').html('Error. Try Later.');
+                                setTimeout(() => {
+                                    $('#createAccount').html('SIGN UP');
+                                }, 2000);
+                            }
+                        });
+
                     }
                 })   
             });
@@ -66,9 +105,7 @@
             <input type="text" name="username" placeholder="Username">
             <input type="text" name="address" placeholder="Address">
             <input type="text" name="email" placeholder="Email">
-            <input type="text" name="emailConfirmation" placeholder="Email">
             <input type="password" name="password" placeholder="Password">
-            <input type="password" name="passwordConfirmation" placeholder="Confirm Password-">
             <h2>What are you interested in?</h2>
             <select name="type" id="type">
                 <option value="null" selected>Select Type...</option>
