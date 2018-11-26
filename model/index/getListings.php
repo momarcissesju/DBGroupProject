@@ -17,12 +17,8 @@
                         <p>Publisher: <span>'.$publisher.'</span></p>
                         <p>Published: <span>'.$datePublished.'</span></p>
                     </div>';
-                    if($_SESSION['type'] != 'seller') {
-                        if(isset($_SESSION['userID'])) {
-                            echo '<a href="#" class="btn btn-primary">BUY NOW ($'.$price.')</a>';
-                        } else {
-                            echo '<a href="#" class="btn btn-primary disabled">BUY NOW ($'.$price.')</a>';
-                        }
+                    if(isset($_SESSION['type']) && $_SESSION['type'] != 'seller') {
+                        echo '<a href="checkout.php?listingID='.$listingID.'" class="btn btn-primary">BUY NOW ($'.$price.')</a>';
                     } else {
                         echo '<a href="#" class="btn btn-primary disabled">BUY NOW ($'.$price.')</a>';
                     }

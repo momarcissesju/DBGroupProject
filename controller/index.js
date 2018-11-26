@@ -6,13 +6,15 @@ $(document).ready(function() {
         success: function(response) {
             console.log(response);
             if(response == 'DB') {
-                $('.content').html('No Video Game for sale.')
+                $('.content').html('<p style="font-size: 48px; text-align: center;">There is a problem. Try later.</p>');
+            } else if(response == "") {
+                $('.content').html('<p style="font-size: 48px; text-align: center;">No Video Game for sale.</p>');
             } else {
                 $('.content').html(response);
             }
         },
         error: function(response) {
-
+            $('.content').html('<p style="font-size: 48px; text-align: center;">There is a problem. Try later.</p>');
         }
     });
 });
