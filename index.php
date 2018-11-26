@@ -5,15 +5,15 @@
             session_start();
             require_once('includes/head.php'); 
         ?>
+        <link type="text/css" rel="stylesheet" href="includes/css/main.css" />
+        <script type="text/javascript" src="controller/index.js"></script>
     </head>
 
     <body>
-        <?php
-            if(isset($_SESSION['userID'])) {
-                echo 'connected';
-            } else {
-                echo 'not connected';
-            }
-        ?>
+        <?php require_once('includes/navbar.php'); ?>
+
+        <div class="content">
+            
+        </div>
     </body>
 </html>

@@ -71,7 +71,7 @@
                                 } else if(response == 'Registered') {
                                     $('#createAccount').html('Account Created');
                                     setTimeout(() => {
-                                        window.location.href = 'login.php';
+                                        window.location.href = 'login';
                                     }, 2000);
                                 } else {
                                     $('#createAccount').html('Error. Try Later.');

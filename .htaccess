@@ -1,0 +1,20 @@
+# Turn Rewrite Engine
+RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#Rewrite for login.php
+RewriteRule ^login login.php [NC,L]
+
+#Rewrite for logout.php
+RewriteRule ^logout logout.php [NC,L]
+
+#Rewrite for signup.php
+RewriteRule ^signup signup.php [NC,L]
+
+#Rewrite for index.php
+RewriteRule ^home index.php [NC,L]
+
+#Rewrite for sell.php
+RewriteRule ^sell sell.php [NC,L]

@@ -45,7 +45,7 @@
                                         $('#login').html('LOGIN'); 
                                     }, 1500);
                                 } else if (response == 'connected') {
-                                    window.location.href = "index.php";
+                                    window.location.href = "home";
                                 } else {
                                     $('#login').html('Cannot connect. Try later.');
                                     setTimeout(() => {
@@ -67,7 +67,7 @@
     </head>
 
     <body>
-        <a href="#" id="logo"><img src="" alt="LOGO"></a>
+        <a href="index.php" id="logo"><img src="includes/assets/logo.png" alt="LOGO"></a>
 
         <form action="">
             <h1>LOGIN</h1>

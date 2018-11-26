@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+* {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: 1s all;
+    -moz-transition: 1s all;
+    -webkit-transition: 1s all;
+}
+
+/*************NAVBAR*************************/
+
+.btn-outline-success {
+    color: #004d99;
+    border-color: #004d99;
+}
+
+.btn-outline-success:hover {
+    background: #004d99;
+    border-color: #004d99;
+}
+
+.nav-link:hover {
+    color: #004d99!important;
+}
+
+.nav-link {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #222222!important;
+}
+
+.form-control {
+    width: 250px!important;
+    margin-left: 25px;
+}
+
+.dropdown-menu {
+    margin-left: -100px!important;
+}
+
+/*******************NAVBAR**********************/
+
+/*******************INDEX***********************/
+
+.content {
+    width: 90%;
+    margin: 25px 5%;
+}
+
+.card {
+    width: 19%;
+    margin: 10px 0.3%;
+    display: inline-block;
+}
+
+.card-title {
+    color: #004d99;
+    font-size: 14px;
+}
+
+.card-body {
+    padding: 10px;
+    text-align: center;
+}
+
+.card-text p {
+    line-height: 10px;
+    font-weight: 800;
+    color: #004d99;
+}
+
+.card-text p span {
+    font-weight: 500;
+    color: #407ab3;
+}
+
+.card-img-top {
+    max-height: 250px;
+}
+
+/*************************INDEX*********************/
+
+/*************************SELL*********************/
+
+.content-sell {
+    border: 1px solid #ccc;
+    padding: 25px;
+    background: #e7eef5;
+    margin: 50px auto;
+}
+
+.content-sell h1 {
+    text-align: center;
+    color: #004d99;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.content-sell #search_item {
+    width: 50%;
+    margin: 10px 25%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #555;
+}
+
+.item_price {
+    width: 40%;
+    margin: 5px 30%;
+    color: #222;
+}
+
+.item_price input {
+    margin: 0;
+}
+
+.sell-now-btn {
+    border: 1px solid #004d99;
+    padding: 7px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: #fff;
+    background: #004d99;
+    border-radius: 4px;
+    width: 20%;
+    margin: 10px 40%;
+    cursor: pointer;
+}
+
+.sell-now-btn:hover {
+    background: #fff;
+    color: #004d99;
+}
+
+.search_item-results {
+    border: 1px solid #cccccc;
+    padding: 0px;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    width: 43%;
+    margin: -11px 10% 0 21.6%;
+    height: 250px;
+    position: absolute;
+    background: #fff;
+    z-index: 2;
+    overflow: auto;
+    border-radius: 4px;
+    display: none;
+}
+
+.item-result {
+    padding: 10px 5px;
+    font-size: 20px;
+    color: #222;
+    font-weight: 700;
+    border-bottom: 1px solid #ccc;
+    height: 50px;
+    cursor: pointer;
+}
+
+.item-result:hover {
+    background: #004d99;
+    color: #fff!important;
+    border-left: 10px solid #007399;
+}
+
+.item-result span {
+    color: #999;
+    font-size: 12px;
+    letter-spacing: 2px;
+    float: right;
+}
+
+/*************************SELL***********************/
