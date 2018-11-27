@@ -25,6 +25,7 @@
                         $('input[name="username"]').css('border-color', '#ff4d4d');
                         $('input[name="password"]').css('border-color', '#ff4d4d');
                         $('#error_message').html('Fill all fields.');
+                        $('#login').html('LOGIN');
                     } else {
                         $('#error_message').html('');
 

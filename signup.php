@@ -21,7 +21,6 @@
                     var firstName = $('input[name="firstName"]').val();
                     var lastName = $('input[name="lastName"]').val();
                     var username = $('input[name="username"]').val();
-                    var address = $('input[name="address"]').val();
                     var email = $('input[name="email"]').val();
                     var password = $('input[name="password"]').val();
                     var type = $('#type').val();
@@ -36,10 +35,6 @@
                         $(this).html('SIGN UP');
                     } else if(isEmpty(username) && isBlank(username)) { //check if user entered username
                         $('input[name="username"]').css('border-color', '#ff4d4d');
-                        $('#error_message').html('Fill all fields.');
-                        $(this).html('SIGN UP');
-                    } else if(isEmpty(address) && isBlank(address)) { //check if user entered address
-                        $('input[name="address"]').css('border-color', '#ff4d4d');
                         $('#error_message').html('Fill all fields.');
                         $(this).html('SIGN UP');
                     } else if(isEmpty(email) && isBlank(email)) { //check if user entered email
@@ -60,11 +55,21 @@
                         $.ajax({
                             url: 'model/login_signup/signup.php',
                             type: 'POST',
-                            data: {firstName: firstName, lastName: lastName, username: username, address: address, email: email, password: password, type: type},
+                            data: {firstName: firstName, lastName: lastName, username: username, email: email, password: password, type: type},
                             success: function(response) {
                                 console.log(response);
                                 if(response == 'DB Error') {
                                     $('#createAccount').html('Error. Try Later.');
+                                    setTimeout(() => {
+                                        $('#createAccount').html('SIGN UP');
+                                    }, 2000);
+                                } else if(response == 'Email') {
+                                    $('#createAccount').html('Email already used.');
+                                    setTimeout(() => {
+                                        $('#createAccount').html('SIGN UP');
+                                    }, 2000);
+                                } else if(response == 'Username') {
+                                    $('#createAccount').html('Username already used.');
                                     setTimeout(() => {
                                         $('#createAccount').html('SIGN UP');
                                     }, 2000);
@@ -102,7 +107,6 @@
             <input type="text" name="firstName" placeholder="First Name">
             <input type="text" name="lastName" placeholder="Last Name">
             <input type="text" name="username" placeholder="Username">
-            <input type="text" name="address" placeholder="Address">
             <input type="email" name="email" placeholder="Email">
             <input type="password" name="password" placeholder="Password">
             <h2>What are you interested in?</h2>

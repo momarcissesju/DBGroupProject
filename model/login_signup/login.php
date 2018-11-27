@@ -8,7 +8,7 @@
 
     $getUser = $conn->prepare("SELECT * FROM Users WHERE username = ? OR email = ?");
     $getUser->bind_param("ss", $username, $username);
-    $getUser->bind_result($userID, $firstName, $lastName, $username, $address, $email, $password, $type);
+    $getUser->bind_result($userID, $firstName, $lastName, $username, $email, $password, $type);
 
     if($getUser->execute()) {
         $getUser->store_result();
@@ -24,7 +24,6 @@
                 $_SESSION['firstName'] = $firstName;
                 $_SESSION['lastName'] = $lastName;
                 $_SESSION['username'] = $username;
-                $_SESSION['address'] = $address;
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
                 $_SESSION['type'] = $type;
