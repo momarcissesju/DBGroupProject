@@ -21,3 +21,6 @@ RewriteRule ^sell sell.php [NC,L]
 
 #Rewrite for profile.php
 RewriteRule ^profile profile.php [NC,L]
+
+#Rewrite for search.php
+RewriteRule ^search/(.+) search.php?q=$1 [NC,L]
