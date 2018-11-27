@@ -51,20 +51,21 @@ $(document).ready(function() {
         var zip = $('#zip').val();
         var state = $('#state').val();
 
-        if((isBlank(address) || isEmpty(address)) || (isBlank(city) || isEmpty(city)) || (isBlank(zip) || isEmpty(zip)) || (isBlank(state) || isEmpty(state)) || (isBlank(address2) || isEmpty(address2)) || (isBlank(first) || isEmpty(first)) || (isBlank(last) || isEmpty(last)))  {
+        if((isBlank(address) || isEmpty(address)) || (isBlank(city) || isEmpty(city)) || (isBlank(zip) || isEmpty(zip)) || (isBlank(state) || isEmpty(state)) || (isBlank(first) || isEmpty(first)) || (isBlank(last) || isEmpty(last)))  {
             $('input').css('border-color', 'red');
             $('select').css('border-color', 'red');
             $('.orderConfirmation').html('Confirm Order');
             setTimeout(resetBorderColor, 7000);
         } else {
-            var recipientAdress = address + ' ' + address2 + ', ' + city + ', ' + state + ' ' + zip;
-            var recipientName
+            var recipientAddress = address + ' ' + address2 + ', ' + city + ', ' + state + ' ' + zip;
+            var recipientName = first + ' ' + last;
 
             $.ajax({
                 url: 'model/checkout/placeOrder.php',
                 type: 'POST',
-                data: {recipientAdress: recipientAdress, listingID: listingID, recipientName: recipientName, shipping: shipping, sellerID: sellerID},
+                data: {recipientAddress: recipientAddress, listingID: listingID, recipientName: recipientName, shipping: shipping, sellerID: sellerID},
                 success: function(response) {
+                    console.log(response);
                     if(response == 'Not connected') {
                         window.location.href = 'login';
                     } else if(response == 'DB') {

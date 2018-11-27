@@ -67,7 +67,6 @@
     </head>
 
     <body>
-        <a href="index.php" id="logo"><img src="includes/assets/logo.png" alt="LOGO"></a>
 
         <form action="">
             <h1>LOGIN</h1>

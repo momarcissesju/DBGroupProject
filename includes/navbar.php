@@ -28,12 +28,14 @@
             type: 'POST',
             success: function(response) {
                 if(!isEmpty(response) && !isBlank(response)) {
-                    $('#snackbar').html(response);
-                    showSnackbar();
-                    setTimeout(() => {
-                        checkNotifications();
-                    }, 60000);
+                    if(response != 'not connected') {
+                        $('#snackbar').html(response);
+                        showSnackbar();
+                    }
                 }
+                setTimeout(() => {
+                    checkNotifications();
+                }, 30000);
                 console.log(response);
             }
         });

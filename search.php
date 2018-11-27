@@ -8,7 +8,6 @@
 ?>
 <html>
     <head>
-    <base href="https://localhost/DBGroupProject/">
         <?php 
             session_start();
             require_once('includes/head.php'); 

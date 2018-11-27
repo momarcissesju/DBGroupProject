@@ -24,10 +24,10 @@
                 <h5 style="font-size: 12px;">Recipient Name</h5>
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="email" class="form-control" id="firstName" placeholder="First Name">
+                        <input type="text" class="form-control" id="firstName" placeholder="First Name">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="lastName" placeholder="Last Name">
+                        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
                     </div>
                 </div>
                 <h5 style="font-size: 12px;">Recipient Address</h5>

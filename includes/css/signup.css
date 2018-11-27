@@ -41,7 +41,7 @@ form h2 {
     margin: 12.5px auto 0px auto;
 }
 
-form input[type="text"] {
+form input[type="text"], form input[type="email"] {
     display: block;
     margin: 5px auto;
     padding: 5px;

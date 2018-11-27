@@ -95,7 +95,6 @@
     </head>
 
     <body>
-        <a href="#" id="logo"><img src="" alt="LOGO"></a>
 
         <form action="">
             <h1>CREATE ACCOUNT</h1>
@@ -104,7 +103,7 @@
             <input type="text" name="lastName" placeholder="Last Name">
             <input type="text" name="username" placeholder="Username">
             <input type="text" name="address" placeholder="Address">
-            <input type="text" name="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email">
             <input type="password" name="password" placeholder="Password">
             <h2>What are you interested in?</h2>
             <select name="type" id="type">
